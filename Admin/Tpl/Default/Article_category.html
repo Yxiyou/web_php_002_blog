@@ -1,0 +1,71 @@
+<include file="Admin:header" />
+<script src="__PUBLIC__/kindeditor/kindeditor-min.js"></script>
+ </script>
+    <!-- End .clear -->
+    <div class="content-box">
+      <!-- Start Content Box -->
+      <!-- End .content-box-header -->
+
+      <!-- End .content-box-content -->
+    </div>
+		<div class="clear"></div>
+        <div class="tab-content default-tab" id="tab1">
+          <form action="{:U('Article/cateadd')}" method="post" class='valid'>
+          	<input type="hidden" name="cateid" value="{$cateinfo['id']}" />
+            <fieldset>
+            <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
+            <p>
+              <label>Father Categorys</label>
+              <select name="categorys" style="min-width:120px;width:auto;">
+			  	<option>Select Categorys</option>
+                <volist name="cate" id="c">
+					<option value="{$c['id']}" {if $cateinfo['pid'] == $c['id']} selected="selected" {/if}>{$c['name']}</option>
+				</volist>
+              </select>
+            </p>
+			 <p>
+              <label>Father Tags</label>
+              <select name="tags" style="min-width:120px;width:auto;">
+			  	<option value="0">Select Categorys</option>
+                <volist name="tags" id="t">
+					<option value="{$t['id']}" {if $cateinfo['pid'] == $t['id']} selected="selected" {/if}>{$t['name']}</option>
+				</volist>
+              </select>
+            </p>
+			 <p>
+              <label>Type</label>
+              <select name="type" style="min-width:120px;width:auto;">
+			  	<option>Select Type</option>
+				<option value="1" {if $cateinfo['type'] == 1} selected="selected" {/if}>Category</option>
+				<option value="2" {if $cateinfo['type'] == 2} selected="selected" {/if}>Tags</option>
+              </select>
+            </p>
+			<p>
+              <label>Categroy-Tags Name</label>
+              <input class="text-input small-input" type="text" id="small-input" name="catetagname" datatype="s1-150" errormsg="标题至少2个字符,最多150个字符！" value="{$cateinfo['name']}"/>
+              <!-- Classes for input-notification: success, error, information, attention --
+              <br /> 
+              <small >A small description of the field</small> </p> -->
+            <p>
+              <input class="button" type="submit" value="Submit" />
+            </p>
+            </fieldset>
+            <div class="clear"></div>
+            <!-- End .clear -->
+          </form>
+        </div>
+        <!-- End #tab2 -->
+      <!-- End .content-box-content -->
+    <!-- End .content-box -->
+    <!-- End .content-box -->
+    <!-- End .content-box -->
+    <div class="clear"></div>
+    <!-- Start Notifications -->
+    <!-- End Notifications -->
+    <!-- start #footer -->
+<script>
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#content');
+        });
+</script>
+	<include file="Admin:footer" />

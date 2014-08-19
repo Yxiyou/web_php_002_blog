@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <title>{if $info['title'] }{$info['title']},{/if}yxy个人博客</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+   	<meta name="keywords" content="{$info['kword']}" />
+    <meta name="description" content="{$info['description']}" />
+    <link href="__PUBLIC__/Css/base.css" rel="stylesheet" type="text/css" />
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/SyntaxHighlighter/styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="__PUBLIC__/SyntaxHighlighter/styles/shThemeDefault.css"/>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <h1><a href="{:U('Index/index')}">blog<span> Blog</span></a><small style="font-size:13px;">&nbsp;&nbsp;&nbsp;yxy</small></h1>
+        </div>
+        <div class="menu_nav">
+            <ul>
+              <li class="menufrist"><a href="{:U('Index/index')}">Home</a></li>
+			  <volist name="meau" id="m">
+			  	 <li><a href="{:U('Index/index',array('cateid'=>$m['id']))}">{$m['name']}</a></li>
+			  </volist>
+			  <!--
+              <li><a href="support.html">Support</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+			  -->
+            </ul>
+            <div class="search">
+            	<form method="get" action="{:U('Index/search')}">
+	                <input type="search" name="keyword" style="width:160px;height:36px;line-height:36px;background:none;border:0px;font-size:16px;" />
+	                <input type="submit" value=" " style="width:72px;height:25px;margin-left:3px;border:none;background:url(Public/Image/searchbtn.png) no-repeat 0 -1px;"/>
+					<input type="hidden" name="m" value="Index">
+					<input type="hidden" name="a" value="search">
+				</form>
+            </div>
+        </div>
+      <!--<div class="search">-->
+        <!--<form id="form" name="form" method="post" action="">-->
+          <!--<span>-->
+          <!--<input name="q" type="text" class="keywords" id="textfield" maxlength="50" value="Search..." />-->
+           <!--</span>-->
+          <!--<input name="b" type="image" src="images/search.gif" class="button" />-->
+        <!--</form>-->
+       <!--</div>-->
+   </div>

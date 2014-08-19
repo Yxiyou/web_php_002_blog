@@ -1,0 +1,63 @@
+<include file="Public:header" />
+	
+    <div class="content">
+        <div class="left">
+             	<div class="article first" id="oneart">
+             		<h2 class="h123"><a href="{:U('Article/index',array('artid'=>$info['id']))}"> {$info['title']}</a></h2>
+					<p class="tag">标 签：
+					<volist name="info['tags']" id="t">
+						<a href="{:U('Article/tagart',array('tagid'=>$t['id']))}"><span>{$t['name']}</span></a>
+					</volist>
+					</p>
+                    <div class="date" style="border:none;box-shadow:none;z-index:-100;">
+                    	<!--
+                    	<p class="image"><a href="{:U('Index/index')}"><img alt="PhPyRb博客!马伟博客!" src="/Public/Image/logo.jpg" /></a></p>
+                        <p class="time"><a href="{:U('Index/index')}">Ma Wei</a></p>
+						-->
+                    </div>
+                    <div class="clr"></div>
+                    <div class="cont" id="minart">
+                    	{$info['content']}
+                    </div>
+                    <div class="info">
+                    	<p>
+                    		<span><a href="{:U('Index/index',array('cateid'=>$a['cateid']))}" target="_blank">{$info['cate']}</a></span> / 
+							<span>评 论&nbsp;({$info['commcount']})</span> / 
+							<span>{$info['uptime']|date="Y-m-d",###}</span> / 
+							<span>热度&nbsp;({$info['hots']} ℃)</span> 
+						</p>
+                    </div>
+                </div>
+              <!-- 
+               <div class="article comment">
+               		<h2 class="h123">&nbsp;&nbsp;&nbsp;&nbsp;Template License</h2>
+                    <div class="date">
+                    	<p class="image"><img alt="" src="/Public/Image/logo.jpg"></p>
+                        <p class="time">2013/06/04</p>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="cont" >
+                    	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.</p>
+                    </div>
+          		</div>
+                -->
+                <!--<div class="article comment">-->
+                    <!--<h2 class="h123">Cemmtent</h2>-->
+                    <!--<div class="date" style="border:none;box-shadow:none;z-index:-100;">-->
+                        <!--<!---->
+                        <!--<p class="image"><a href="{:U('Index/index')}"><img alt="PhPyRb博客!马伟博客!" src="/Public/Image/logo.jpg" /></a></p> -->
+                        <!--<p class="time"><a href="{:U('Index/index')}">Ma Wei</a></p>-->
+						<!---->
+                    <!--</div>-->
+                    <!--<div class="clr"></div>-->
+                    <!--<div class="cont" >-->
+                        <!--<form method="POST" action="{:U('Article/commentadd')}-->
+                        <!--<p><span><label>名 称：<input name="name" type="text" /></label></span>&nbsp;&nbsp;<span><label>邮 箱：<input name="email" type="text" /></label></span>&nbsp;&nbsp;<span><label>主 页：<input name="blog" type="text" /></label></span></p>-->
+                        <!--<textarea name="comment" rows="6" cols="80%" ></textarea></form>-->
+                    <!--</div>-->
+                  <!--</div>-->
+        </div>
+        
+<include file="Public:meau" />
+
+<include file="Public:footer" />

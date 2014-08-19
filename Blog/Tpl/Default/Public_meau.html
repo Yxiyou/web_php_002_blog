@@ -1,0 +1,51 @@
+	<div class="right">
+            <div class="sidebar">
+              <h2>文章分类</h2>
+              <div class="clr"></div>
+              <ul class="sb_menu">
+              	<volist name="meau" id="m">
+                	<li><a href="{:U('Index/index',array('cateid'=>$m['id']))}">{$m['name']}</a>&nbsp;({$m['count']})</li>
+				</volist>
+              </ul>
+            </div>
+            
+            <div class="sidebar">
+              <h2>热门标签</h2>
+              <div class="clr"></div>
+			  <ul class="sb_menu two">
+			  	<volist name="taglist" id="l" mod="2">
+	                <eq name="mod" value="0"><li><a href="{:U('Article/tagart',array('tagid'=>$l['id']))}">{$l['name']}</a></li></eq>
+				</volist>
+              </ul>
+			  <ul class="sb_menu two">
+			  	<volist name="taglist" id="l" mod="2">
+	                <eq name="mod" value="1"><li><a href="{:U('Article/tagart',array('tagid'=>$l['id']))}">{$l['name']}</a></li></eq>
+				</volist>
+              </ul>
+			</div>  
+            <!--
+            <div class="sidebar">
+              <h2>Sidebar Menu</h2>
+              <div class="clr"></div>
+              <ul class="sb_menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">TemplateInfo</a></li>
+                <li><a href="#">Style Demo</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Archives</a></li>
+                <li><a href="#" title="Website Templates">Web Templates</a></li>
+              </ul>
+            </div>
+			-->
+            
+             <div class="sidebar">
+              <h2>热门文章</h2>
+              <div class="clr"></div>
+              <ul class="sb_menu">
+              	<volist name="top10" id="t">
+               		<li><a href="{:U('Article/index',array('artid'=>$t['id']))}">{$t['title']}</a>&nbsp;({$t['hots']})</li>
+				</volist>
+              </ul>
+            </div>
+           
+	</div>

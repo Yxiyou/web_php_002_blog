@@ -1,0 +1,44 @@
+<include file="Public:header" />
+   <div class="content">
+        <div class="left">
+        	<volist name="indexart" id="a">
+             	<div class="article first">
+             		<h2 class="h123"><a href="{:U('Article/index',array('artid'=>$a['id']))}" target="_blank">{$a['title']}</a></h2>
+                    <p class="tag">标 签：
+					<volist name="a['tags']" id="t">
+						<a href="{:U('Article/tagart',array('tagid'=>$t['id']))}"><span>{$t['name']}</span></a>
+					</volist>
+					</p>
+					<div class="clr"></div>
+					<div class="date" style="border:none;box-shadow:none;z-index:-100;">
+                    	<!--
+                    	<p class="image"><a href="{:U('Index/index')}"><img alt="PhPyRb博客!马伟博客!" src="/Public/Image/logo.jpg" /></a></p>
+                        <p class="time"><a href="{:U('Index/index')}">Ma Wei</a></p>
+						-->
+                    </div>
+                    <div class="clr"></div>
+                    <div class="cont" id="maxart">
+                    	{$a['content']}
+                    </div>
+                    <div class="info">
+                    	<p>
+                    		<span><a href="{:U('Index/index',array('cateid'=>$a['cateid']))}" target="_blank">{$a['cate']}</a></span> / 
+							<span><a href="{:U('Article/index',array('artid'=>$a['id']))}" target="_blank">评 论&nbsp;({$a['commcount']})</a></span> / 
+							<span>热度&nbsp;({$a['hots']} ℃)</span> / 
+							<span>{$a['uptime']|date="Y-m-d",###}</span> / 
+							<span><a href="{:U('Article/index',array('artid'=>$a['id']))}" target="_blank">阅读全文&nbsp;</a></span>
+						</p>
+					</div>
+                </div>
+           </volist>
+		   <div><div class="clr"></div>
+		   </div>
+		   <div id="page">
+		   		<p>{$page}</p>
+		   </div>
+        </div>
+        <!-- start right -->
+		<include file="Public:meau" />	
+		<!-- end right -->
+	</div>
+<include file="Public:footer" />
